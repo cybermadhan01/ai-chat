@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS messages (
+  id TEXT PRIMARY KEY,
+  role TEXT,
+  content TEXT,
+  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);

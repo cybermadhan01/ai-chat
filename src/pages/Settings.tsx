@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import './Settings.css';
 
 export const Settings: React.FC = () => {
+  const [successMsg, setSuccessMsg] = useState('');
+
+  const handleSave = () => {
+    setSuccessMsg('Settings saved successfully!');
+    setTimeout(() => {
+      setSuccessMsg('');
+    }, 3000);
+  };
+
   return (
     <div className="settings-page">
       <div className="settings-container">
@@ -40,9 +49,14 @@ export const Settings: React.FC = () => {
         </div>
 
         <div className="settings-actions">
-          <Button variant="primary">Save Changes</Button>
+          <Button variant="primary" onClick={handleSave}>Save Changes</Button>
           <Button variant="secondary" style={{ marginLeft: '16px' }}>Cancel</Button>
         </div>
+        {successMsg && (
+          <div style={{ marginTop: '16px', color: '#10B981', fontWeight: 500 }}>
+            {successMsg}
+          </div>
+        )}
       </div>
     </div>
   );

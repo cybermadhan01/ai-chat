@@ -103,6 +103,7 @@
 
 /* Input Area */
 .chat-input-container {
+  position: relative;
   padding: 24px 24px 32px;
   display: flex;
   flex-direction: column;
@@ -210,4 +211,104 @@
   .chat-input-container {
     padding: 16px 16px 24px;
   }
+}
+
+/* Drag and Drop & Attachments */
+.chat-input-container.drag-active {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.drag-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  font-weight: 600;
+  color: var(--color-primary);
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--border-radius-card);
+}
+
+.attachments-preview {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F1F5F9;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: var(--color-primary);
+  border: 1px solid #E2E8F0;
+}
+
+.attachment-name {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-attachment {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.remove-attachment:hover {
+  color: #EF4444;
+}
+
+/* Voice Input Animation */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.icon-btn.listening {
+  color: #EF4444;
+  animation: pulse 1.5s infinite;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Loading Dots */
+@keyframes loadingBlink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.loading-dots span {
+  animation: loadingBlink 1.4s infinite both;
+  font-size: 24px;
+  line-height: 10px;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
 }
