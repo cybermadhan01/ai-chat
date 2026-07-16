@@ -1,0 +1,104 @@
+.chat-history-page {
+  padding: 40px 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-header {
+  margin-bottom: 40px;
+}
+
+.history-card {
+  padding: 24px 0 !important; /* Remove horizontal padding for table */
+  overflow: hidden;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.history-table th {
+  padding: 16px 32px;
+  border-bottom: var(--border-subtle);
+  color: var(--color-text-light);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.history-table td {
+  padding: 20px 32px;
+  border-bottom: var(--border-subtle);
+  color: var(--color-text-body);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.history-table tbody tr:hover td {
+  background-color: rgba(15, 23, 42, 0.02);
+}
+
+.title-cell {
+  color: var(--color-primary) !important;
+  width: 25%;
+}
+
+.snippet-cell {
+  width: 45%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0; /* Required for ellipsis to work in table cell */
+}
+
+.date-cell {
+  width: 15%;
+}
+
+.action-cell {
+  width: 15%;
+}
+
+.action-cell button {
+  background: none;
+  border: 1px solid var(--color-text-light);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-full);
+  color: var(--color-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-cell button:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .snippet-cell {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-history-page {
+    padding: 24px;
+  }
+  .history-table th, .history-table td {
+    padding: 16px;
+  }
+  .date-cell {
+    display: none;
+  }
+}

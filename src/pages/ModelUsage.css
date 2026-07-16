@@ -1,0 +1,120 @@
+.model-usage-page {
+  padding: var(--section-padding-y) var(--page-padding-x);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.usage-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.usage-stat-card {
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-body);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-subtitle {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.chart-placeholder {
+  padding: 32px !important;
+}
+
+.chart-header {
+  margin-bottom: 32px;
+}
+
+.mock-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bar-label {
+  width: 120px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.bar-track {
+  flex-grow: 1;
+  height: 24px;
+  background-color: var(--color-bg-page);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+}
+
+.bar-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-full);
+}
+
+.bar-value {
+  width: 60px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-body);
+}
+
+@media (max-width: 1024px) {
+  .usage-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .usage-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .bar-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .bar-label, .bar-value {
+    width: 100%;
+    text-align: left;
+  }
+  .bar-track {
+    width: 100%;
+  }
+}

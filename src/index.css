@@ -1,0 +1,127 @@
+:root {
+  /* Colors */
+  --color-primary: #0F172A; /* Deep Navy */
+  --color-secondary: #1E293B; /* Navy Secondary */
+  --color-accent: #FACC15; /* Vibrant Yellow */
+  --color-accent-muted: #EAB308;
+  
+  --color-bg-page: #FFFFFF;
+  --color-bg-surface: #F8FAFC;
+  --color-text-body: #64748B; /* Slate Gray */
+  --color-text-light: #94A3B8;
+  
+  /* Layout & Spacing */
+  --max-width: 1440px;
+  --spacing-base: 4px;
+  --border-radius-full: 9999px;
+  --border-radius-card: 24px;
+  --border-radius-input: 12px;
+  --border-radius-small: 8px;
+
+  /* Shadows */
+  --shadow-hover: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-header: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-pressed: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-focus: 0px 0px 0px 3px rgba(15, 23, 42, 0.1);
+  --border-subtle: 1px solid rgba(0, 0, 0, 0.02);
+
+  /* Typography Variables (Desktop Default) */
+  --font-h1: 80px;
+  --line-h1: 88px;
+  --font-h2: 56px;
+  --line-h2: 61.6px;
+  --font-h3: 28px;
+  --line-h3: 30.8px;
+  --font-h4: 20px;
+  --line-h4: 22px;
+  --font-body: 16px;
+  
+  /* Spacing Variables (Desktop Default) */
+  --page-padding-x: 60px;
+  --section-padding-y: 80px;
+}
+
+/* Tablet Overrides */
+@media (max-width: 1199px) {
+  :root {
+    --font-h1: 64px;
+    --line-h1: 70px;
+    --font-h2: 48px;
+    --line-h2: 52px;
+    --page-padding-x: 40px;
+    --section-padding-y: 60px;
+  }
+}
+
+/* Mobile Overrides */
+@media (max-width: 767px) {
+  :root {
+    --font-h1: 48px;
+    --line-h1: 52px;
+    --font-h2: 36px;
+    --line-h2: 40px;
+    --font-h3: 22px;
+    --line-h3: 26px;
+    --page-padding-x: 24px;
+    --section-padding-y: 40px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--color-text-body);
+  background-color: var(--color-bg-page);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  line-height: var(--line-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: var(--line-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: var(--line-h3);
+}
+
+h4 {
+  font-size: var(--font-h4);
+  line-height: var(--line-h4);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 81.3125px; /* Header height */
+}

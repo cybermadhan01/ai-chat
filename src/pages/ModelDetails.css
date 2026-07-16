@@ -1,0 +1,94 @@
+.model-details-page {
+  padding: 40px 60px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--color-text-body);
+  cursor: pointer;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--color-primary);
+}
+
+.details-header {
+  margin-bottom: 48px;
+}
+
+.details-header h1 {
+  margin-bottom: 8px;
+}
+
+.provider-subtitle {
+  font-size: 18px;
+  color: var(--color-text-light);
+}
+
+.details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.capabilities-list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.capabilities-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: var(--color-text-body);
+}
+
+.pricing-grid {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--color-bg-page);
+  border-radius: var(--border-radius-input);
+  border: 1px solid #E2E8F0;
+}
+
+.price-label {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.price-value {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .model-details-page {
+    padding: 24px;
+  }
+  .details-content {
+    grid-template-columns: 1fr;
+  }
+}

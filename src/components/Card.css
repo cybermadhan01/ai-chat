@@ -1,0 +1,28 @@
+.card {
+  padding: 56px 40px;
+  border-radius: var(--border-radius-card);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Standard Card */
+.card-standard {
+  background-color: var(--color-bg-surface);
+  border: var(--border-subtle);
+  color: var(--color-primary);
+}
+.card-standard:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Dark Card */
+.card-dark {
+  background-color: var(--color-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+/* Transparent Card for Chat bubbles etc */
+.card-transparent {
+  background-color: transparent;
+  padding: 24px;
+}

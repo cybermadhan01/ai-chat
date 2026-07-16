@@ -1,0 +1,75 @@
+.model-compare-page {
+  padding: var(--section-padding-y) var(--page-padding-x);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.compare-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px !important;
+}
+
+.compare-card h3 {
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+
+.compare-card .provider {
+  color: var(--color-text-light);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.price-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-tag span {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-body);
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--color-text-body);
+}
+
+@media (max-width: 1024px) {
+  .compare-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
