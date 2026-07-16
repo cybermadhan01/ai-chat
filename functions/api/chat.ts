@@ -47,7 +47,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         'X-Title': 'Elevate AI Chatbot',
       },
       body: JSON.stringify({
-        model: 'meta-llama/llama-3.1-8b-instruct:free',
+        model: 'openrouter/auto',
         messages: messages,
       })
     });
