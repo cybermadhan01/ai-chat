@@ -48,6 +48,13 @@ export const Header: React.FC = () => {
             Models
           </NavLink>
           <NavLink 
+            to="/mcq" 
+            className={({ isActive }) => (isActive || location.pathname.startsWith('/mcq') ? 'nav-link active' : 'nav-link')}
+            onClick={closeMenu}
+          >
+            MCQ Engine
+          </NavLink>
+          <NavLink 
             to="/settings" 
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
             onClick={closeMenu}
