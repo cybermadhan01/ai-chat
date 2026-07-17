@@ -71,8 +71,18 @@ export const McqTest: React.FC = () => {
         // Load saved progress
         const saved = localStorage.getItem(`mcq_progress_${slug}`);
         if (saved) {
-          const parsed: ProgressState = JSON.parse(saved);
-          setProgress(parsed);
+          try {
+            const parsed = JSON.parse(saved);
+            // Ensure the saved data is compatible with the new ProgressState interface
+            if (parsed && Array.isArray(parsed.answers) && Array.isArray(parsed.questionOrder) && parsed.optionsMap) {
+              setProgress(parsed);
+            } else {
+              // Obsolete or corrupted data structure - clear it
+              localStorage.removeItem(`mcq_progress_${slug}`);
+            }
+          } catch (e) {
+            localStorage.removeItem(`mcq_progress_${slug}`);
+          }
         }
       } catch (err: any) {
         setError(err.message);
