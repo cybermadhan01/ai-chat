@@ -1,6 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Settings } from './pages/Settings';
 
@@ -18,6 +19,10 @@ import { ModelDetails } from './pages/ModelDetails';
 import { CustomModel } from './pages/CustomModel';
 import { ModelCompare } from './pages/ModelCompare';
 import { ModelUsage } from './pages/ModelUsage';
+
+// MCQ imports
+import { McqUpload } from './pages/mcq/McqUpload';
+import { McqTest } from './pages/mcq/McqTest';
 
 function App() {
   return (
@@ -47,9 +52,16 @@ function App() {
               <Route path=":id" element={<ModelDetails />} />
             </Route>
 
+            {/* MCQ Routes */}
+            <Route path="/mcq">
+              <Route index element={<McqUpload />} />
+              <Route path=":slug" element={<McqTest />} />
+            </Route>
+
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

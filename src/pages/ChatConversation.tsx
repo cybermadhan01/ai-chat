@@ -24,7 +24,7 @@ export const ChatConversation: React.FC = () => {
     {
       id: '3',
       role: 'ai',
-      content: 'I have designed a sleek, modern UI for you that follows the latest 2026 design trends. Here are the features included in this interface:\n\n- Typography: Uses Outfit for headers and Inter for body text.\n- Color Palette: Deep Navy (#0F172A) and Vibrant Yellow (#FACC15) accents.\n- Rich Input Box: Modern pill shape with attachment and voice support.'
+      content: 'I have designed a sleek, modern UI for you that follows the Zylohub design system guidelines. Here are the features included in this interface:\n\n- Typography: Uses Inter exclusively for all text elements.\n- Color Palette: Deep Black (#000000) and Primary Action Yellow (#FFD02B) accents.\n- Rich Input Box: Modern pill shape with attachment and voice support.'
     }
   ]);
   

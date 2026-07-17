@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: var(--surface-black);
 }
 
 .usage-stats-grid {
@@ -16,6 +17,9 @@
   padding: 24px !important;
   display: flex;
   flex-direction: column;
+  background-color: var(--surface-dark-charcoal);
+  border: 1px solid var(--border-dark-gray);
+  border-radius: var(--border-radius-card);
 }
 
 .stat-header {
@@ -25,34 +29,49 @@
   margin-bottom: 16px;
 }
 
+.stat-header svg {
+  color: var(--primary-yellow);
+}
+
 .stat-title {
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-text-body);
+  color: var(--border-gray-dark); /* #9CA3AF */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .stat-value {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--text-white); /* #FFFFFF */
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .stat-subtitle {
   font-size: 14px;
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
 }
 
 .chart-placeholder {
   padding: 32px !important;
+  background-color: var(--surface-dark-charcoal);
+  border: 1px solid var(--border-dark-gray);
+  border-radius: var(--border-radius-card);
 }
 
 .chart-header {
   margin-bottom: 32px;
+}
+
+.chart-header h3 {
+  color: var(--text-white);
+}
+
+.chart-header p {
+  color: var(--border-gray-dark);
 }
 
 .mock-bar-chart {
@@ -70,21 +89,21 @@
 .bar-label {
   width: 120px;
   font-weight: 500;
-  color: var(--color-primary);
+  color: var(--text-white); /* #FFFFFF */
 }
 
 .bar-track {
   flex-grow: 1;
   height: 24px;
-  background-color: var(--color-bg-page);
+  background-color: var(--surface-black);
   border-radius: var(--border-radius-full);
   overflow: hidden;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--interactive-light-border); /* #374151 */
 }
 
 .bar-fill {
   height: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--primary-yellow); /* Yellow bar fill */
   border-radius: var(--border-radius-full);
 }
 
@@ -92,7 +111,7 @@
   width: 60px;
   text-align: right;
   font-weight: 600;
-  color: var(--color-text-body);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 1024px) {

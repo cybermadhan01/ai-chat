@@ -1,69 +1,101 @@
 :root {
-  /* Colors */
-  --color-primary: #0F172A; /* Deep Navy */
-  --color-secondary: #1E293B; /* Navy Secondary */
-  --color-accent: #FACC15; /* Vibrant Yellow */
+  /* Colors - Zylohub Design System */
+  --primary-yellow: #FFD02B;
+  --primary-yellow-lighter: #FACC15;
+  --accent-yellow-light: #FDE047;
+  --accent-yellow-muted: #EAB308;
+
+  --interactive-black: #000000;
+  --interactive-dark-gray: #232323;
+  --interactive-medium-gray: #444444;
+  --interactive-light-border: #374151;
+
+  --text-white: #FFFFFF;
+  --text-secondary: #F3F4F6;
+  --text-tertiary: rgb(243, 244, 246);
+  --border-gray-light: #E5E7EB;
+  --border-gray-medium: #D1D5DB;
+  --border-gray-dark: #9CA3AF;
+
+  --surface-black: #000000;
+  --surface-dark-charcoal: #18181A;
+  --border-dark-gray: #4B5563;
+  --border-light: #E5E7EB;
+
+  /* Legacy Mapping variables to prevent breaking */
+  --color-primary: #000000;
+  --color-secondary: #232323;
+  --color-accent: #FFD02B;
   --color-accent-muted: #EAB308;
-  
-  --color-bg-page: #FFFFFF;
-  --color-bg-surface: #F8FAFC;
-  --color-text-body: #64748B; /* Slate Gray */
-  --color-text-light: #94A3B8;
+  --color-bg-page: #000000;
+  --color-bg-surface: #18181A;
+  --color-text-body: #FFFFFF;
+  --color-text-light: #9CA3AF;
   
   /* Layout & Spacing */
-  --max-width: 1440px;
+  --max-width: 1200px; /* Max Container Width is 1200px desktop */
   --spacing-base: 4px;
   --border-radius-full: 9999px;
-  --border-radius-card: 24px;
+  --border-radius-card: 12px;
   --border-radius-input: 12px;
-  --border-radius-small: 8px;
+  --border-radius-small: 12px;
 
-  /* Shadows */
-  --shadow-hover: 0px 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-header: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  /* Shadows (Depth & Elevation) */
+  --shadow-flat: none;
+  --shadow-raise: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  --shadow-lift: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  --shadow-float: rgba(255, 208, 43, 0.4) 0px 4px 25px 0px;
+  --shadow-glow: rgba(255, 208, 43, 0.6) 0px 0px 16px 0px, rgb(34, 34, 34) 0px 2px 8px 0px;
+
+  /* Shadows legacy mappings */
+  --shadow-hover: var(--shadow-raise);
+  --shadow-header: none;
   --shadow-pressed: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-focus: 0px 0px 0px 3px rgba(15, 23, 42, 0.1);
-  --border-subtle: 1px solid rgba(0, 0, 0, 0.02);
+  --shadow-focus: rgba(255, 208, 43, 0.2) 0px 0px 0px 3px;
+  --border-subtle: 1px solid var(--interactive-light-border);
 
   /* Typography Variables (Desktop Default) */
-  --font-h1: 80px;
-  --line-h1: 88px;
-  --font-h2: 56px;
-  --line-h2: 61.6px;
-  --font-h3: 28px;
-  --line-h3: 30.8px;
-  --font-h4: 20px;
-  --line-h4: 22px;
-  --font-body: 16px;
+  --font-h1: 72px;
+  --line-h1: 72px;
+  --font-h2: 60px;
+  --line-h2: 60px;
+  --font-h3: 18px;
+  --line-h3: 28px;
+  --font-h4: 14px;
+  --line-h4: 20px;
+  --font-body: 20px;
+  --line-body: 28px;
+  --font-body-small: 16px;
+  --line-body-small: 24px;
   
   /* Spacing Variables (Desktop Default) */
-  --page-padding-x: 60px;
-  --section-padding-y: 80px;
+  --page-padding-x: 40px;
+  --section-padding-y: 64px;
 }
 
 /* Tablet Overrides */
-@media (max-width: 1199px) {
+@media (max-width: 1023px) {
   :root {
-    --font-h1: 64px;
-    --line-h1: 70px;
-    --font-h2: 48px;
-    --line-h2: 52px;
-    --page-padding-x: 40px;
-    --section-padding-y: 60px;
+    --font-h1: 48px;
+    --line-h1: 48px;
+    --font-h2: 36px;
+    --line-h2: 40px;
+    --page-padding-x: 24px;
+    --section-padding-y: 48px;
   }
 }
 
 /* Mobile Overrides */
-@media (max-width: 767px) {
+@media (max-width: 639px) {
   :root {
-    --font-h1: 48px;
-    --line-h1: 52px;
-    --font-h2: 36px;
-    --line-h2: 40px;
-    --font-h3: 22px;
-    --line-h3: 26px;
-    --page-padding-x: 24px;
-    --section-padding-y: 40px;
+    --font-h1: 36px;
+    --line-h1: 36px;
+    --font-h2: 28px;
+    --line-h2: 32px;
+    --font-body: 16px;
+    --line-body: 24px;
+    --page-padding-x: 16px;
+    --section-padding-y: 32px;
   }
 }
 
@@ -74,44 +106,53 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: var(--color-text-body);
-  background-color: var(--color-bg-page);
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-white);
+  background-color: var(--surface-black);
+  line-height: var(--line-body);
   -webkit-font-smoothing: antialiased;
   font-size: var(--font-body);
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Outfit', -apple-system, sans-serif;
-  font-weight: 800;
-  color: var(--color-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-white);
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: var(--font-h1);
   line-height: var(--line-h1);
+  font-weight: 800;
 }
 
 h2 {
   font-size: var(--font-h2);
   line-height: var(--line-h2);
+  font-weight: 800;
 }
 
 h3 {
   font-size: var(--font-h3);
   line-height: var(--line-h3);
+  font-weight: 700;
 }
 
 h4 {
   font-size: var(--font-h4);
   line-height: var(--line-h4);
+  font-weight: 600;
 }
 
 a {
   text-decoration: none;
-  color: var(--color-secondary);
+  color: var(--primary-yellow);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-yellow-lighter);
+  text-decoration: underline;
 }
 
 /* App container */
@@ -123,5 +164,5 @@ a {
 
 .main-content {
   flex-grow: 1;
-  padding-top: 81.3125px; /* Header height */
+  padding-top: 80px; /* Header height */
 }

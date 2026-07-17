@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, NavLink } from 'react-router-dom';
 import { User, Menu, X } from 'lucide-react';
 import './ChatLayout.css';
 
@@ -28,13 +28,45 @@ export const ChatLayout: React.FC = () => {
         </button>
         
         <div className="chat-history-sidebar">
-          <div className="history-section-title" onClick={() => handleNav('/chat/dashboard')} style={{cursor: 'pointer', color: 'var(--color-primary)'}}>Dashboard</div>
-          <div className="history-section-title" onClick={() => handleNav('/chat/history')} style={{cursor: 'pointer', marginTop: '16px'}}>All History</div>
+          <NavLink 
+            to="/chat/dashboard" 
+            className={({ isActive }) => `history-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+            style={{ fontWeight: 600, display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}
+          >
+            Dashboard
+          </NavLink>
+          <NavLink 
+            to="/chat/history" 
+            className={({ isActive }) => `history-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+            style={{ fontWeight: 600, display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: '16px' }}
+          >
+            All History
+          </NavLink>
           
-          <div className="history-section-title" style={{ marginTop: '24px' }}>Recent Chats</div>
-          <div className="history-item" onClick={() => handleNav('/chat/1')}>Build ChatGPT Clone UI</div>
-          <div className="history-item" onClick={() => handleNav('/chat/2')}>Latest UX/UI Trends 2026</div>
-          <div className="history-item" onClick={() => handleNav('/chat/3')}>Python Script Debugging</div>
+          <div className="history-section-title" style={{ marginTop: '24px', pointerEvents: 'none' }}>Recent Chats</div>
+          <NavLink 
+            to="/chat/1" 
+            className={({ isActive }) => `history-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
+            Build ChatGPT Clone UI
+          </NavLink>
+          <NavLink 
+            to="/chat/2" 
+            className={({ isActive }) => `history-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
+            Latest UX/UI Trends 2026
+          </NavLink>
+          <NavLink 
+            to="/chat/3" 
+            className={({ isActive }) => `history-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
+            Python Script Debugging
+          </NavLink>
         </div>
 
         <div className="sidebar-footer">

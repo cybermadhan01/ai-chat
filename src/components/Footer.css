@@ -1,0 +1,112 @@
+.site-footer {
+  background-color: var(--surface-black); /* #000000 */
+  border-top: 1px solid var(--interactive-light-border); /* #374151 */
+  padding: 4rem 2rem 1.5rem;
+  margin-top: 4rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  max-width: var(--max-width); /* 1200px */
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.footer-logo:hover {
+  text-decoration: none;
+}
+
+.footer-logo-icon {
+  color: var(--primary-yellow);
+}
+
+.footer-tagline {
+  color: var(--border-gray-dark); /* #9CA3AF */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-socials a {
+  color: var(--border-gray-dark);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-socials a:hover {
+  color: var(--primary-yellow);
+  transform: translateY(-2px);
+}
+
+.footer-heading {
+  color: var(--text-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links li a {
+  color: var(--border-gray-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: var(--primary-yellow);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--interactive-light-border);
+  text-align: center;
+  color: var(--border-gray-dark);
+  font-size: 0.9rem;
+}

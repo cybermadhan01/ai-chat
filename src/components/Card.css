@@ -1,28 +1,39 @@
 .card {
-  padding: 56px 40px;
-  border-radius: var(--border-radius-card);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Standard Card */
-.card-standard {
-  background-color: var(--color-bg-surface);
-  border: var(--border-subtle);
-  color: var(--color-primary);
-}
-.card-standard:hover {
-  box-shadow: var(--shadow-hover);
-}
-
-/* Dark Card */
-.card-dark {
-  background-color: var(--color-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
+/* Standard & Dark Card */
+.card-standard, .card-dark {
+  background-color: var(--surface-dark-charcoal); /* #18181A */
+  border: 1px solid var(--border-dark-gray); /* #4B5563 */
+  border-radius: var(--border-radius-card); /* 12px */
+  padding: 24px;
+  color: var(--text-white);
+  box-shadow: var(--shadow-raise);
 }
 
-/* Transparent Card for Chat bubbles etc */
+.card-standard:hover, .card-dark:hover {
+  border-color: var(--border-gray-dark); /* #9CA3AF */
+}
+
+/* Featured Yellow Card */
+.card-featured {
+  background-color: var(--primary-yellow); /* #FFD02B */
+  border: 0px solid transparent;
+  border-radius: 24px;
+  padding: 40px;
+  color: var(--interactive-black); /* #000000 */
+  box-shadow: var(--shadow-glow);
+}
+
+.card-featured h1, .card-featured h2, .card-featured h3, .card-featured h4, .card-featured p {
+  color: var(--interactive-black) !important;
+}
+
+/* Transparent Card */
 .card-transparent {
   background-color: transparent;
   padding: 24px;
+  border: none;
+  box-shadow: none;
 }

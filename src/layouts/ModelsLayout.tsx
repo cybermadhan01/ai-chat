@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 import { Cpu, Settings2, GitCompare, Activity, Menu, X } from 'lucide-react';
 import './ModelsLayout.css';
 
 export const ModelsLayout: React.FC = () => {
-  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const handleNav = (path: string) => {
-    navigate(path);
-    setSidebarOpen(false);
-  };
 
   return (
     <div className="models-layout">
@@ -26,18 +21,35 @@ export const ModelsLayout: React.FC = () => {
         <h2 className="sidebar-heading">AI Models</h2>
         
         <div className="models-nav">
-          <div className="nav-item" onClick={() => handleNav('/models')}>
+          <NavLink 
+            to="/models" 
+            end 
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
             <Cpu size={18} /> Model Selection
-          </div>
-          <div className="nav-item" onClick={() => handleNav('/models/compare')}>
+          </NavLink>
+          <NavLink 
+            to="/models/compare" 
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
             <GitCompare size={18} /> Compare Models
-          </div>
-          <div className="nav-item" onClick={() => handleNav('/models/custom')}>
+          </NavLink>
+          <NavLink 
+            to="/models/custom" 
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
             <Settings2 size={18} /> Custom Models
-          </div>
-          <div className="nav-item" onClick={() => handleNav('/models/usage')}>
+          </NavLink>
+          <NavLink 
+            to="/models/usage" 
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} 
+            onClick={() => setSidebarOpen(false)}
+          >
             <Activity size={18} /> Usage & Analytics
-          </div>
+          </NavLink>
         </div>
       </aside>
 

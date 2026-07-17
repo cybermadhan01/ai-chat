@@ -1,8 +1,9 @@
 .model-details-page {
-  padding: 40px 60px;
+  padding: 40px var(--page-padding-x);
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  background-color: var(--surface-black);
 }
 
 .back-btn {
@@ -13,14 +14,14 @@
   gap: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  color: var(--color-text-body);
+  color: var(--border-gray-dark); /* #9CA3AF */
   cursor: pointer;
   margin-bottom: 32px;
   transition: color 0.2s;
 }
 
 .back-btn:hover {
-  color: var(--color-primary);
+  color: var(--primary-yellow);
 }
 
 .details-header {
@@ -29,11 +30,12 @@
 
 .details-header h1 {
   margin-bottom: 8px;
+  color: var(--text-white);
 }
 
 .provider-subtitle {
   font-size: 18px;
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
 }
 
 .details-content {
@@ -53,7 +55,11 @@
   gap: 12px;
   margin-bottom: 16px;
   font-size: 16px;
-  color: var(--color-text-body);
+  color: var(--text-secondary);
+}
+
+.capabilities-list li svg {
+  color: var(--primary-yellow);
 }
 
 .pricing-grid {
@@ -68,20 +74,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: var(--color-bg-page);
+  background-color: var(--surface-dark-charcoal);
   border-radius: var(--border-radius-input);
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--interactive-light-border);
 }
 
 .price-label {
   font-weight: 500;
-  color: var(--color-primary);
+  color: var(--text-white);
 }
 
 .price-value {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--primary-yellow); /* Yellow pricing highlight */
 }
 
 @media (max-width: 768px) {

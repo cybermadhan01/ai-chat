@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: 'standard' | 'dark' | 'transparent';
+  variant?: 'standard' | 'dark' | 'transparent' | 'featured';
   children: React.ReactNode;
   className?: string;
 }

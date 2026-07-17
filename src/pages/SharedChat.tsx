@@ -25,8 +25,8 @@ export const SharedChat: React.FC = () => {
             <div className="ai-avatar"><Bot size={16} /></div>
             <div className="message-text">
               <p>I have designed a sleek, modern UI for you that follows the latest 2026 design trends. Here are the features included in this interface:</p>
-              <p>- Typography: Uses Outfit for headers and Inter for body text.</p>
-              <p>- Color Palette: Deep Navy (#0F172A) and Vibrant Yellow (#FACC15) accents.</p>
+              <p>- Typography: Uses Inter exclusively for all text elements.</p>
+              <p>- Color Palette: Deep Black (#000000) and Primary Action Yellow (#FFD02B) accents.</p>
             </div>
           </div>
         </div>

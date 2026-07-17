@@ -1,0 +1,145 @@
+.mcq-upload-page {
+  padding: var(--section-padding-y) var(--page-padding-x);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--surface-black);
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.upload-header h1 {
+  font-size: var(--font-h2);
+  line-height: var(--line-h2);
+  color: var(--text-white);
+  margin-bottom: 16px;
+}
+
+.upload-header p {
+  color: var(--border-gray-dark);
+  font-size: var(--font-body);
+}
+
+.template-download-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--surface-dark-charcoal);
+  border: 1px solid var(--interactive-light-border);
+  border-radius: var(--border-radius-card);
+  padding: 24px 32px;
+}
+
+.template-download-section p {
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.download-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.format-select {
+  background-color: var(--surface-black);
+  color: var(--text-white);
+  border: 1px solid var(--border-dark-gray);
+  border-radius: var(--border-radius-input);
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  height: 48px;
+}
+
+.format-select:focus {
+  border-color: var(--primary-yellow);
+  box-shadow: var(--shadow-focus);
+}
+
+.drop-zone {
+  border: 2px dashed var(--border-dark-gray);
+  border-radius: var(--border-radius-card);
+  padding: 64px 24px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: var(--surface-dark-charcoal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; /* Make it massive in the center */
+}
+
+.drop-zone.active, .drop-zone:hover {
+  border-color: var(--primary-yellow);
+  background-color: rgba(255, 208, 43, 0.05);
+}
+
+.drop-zone-text {
+  color: var(--text-white);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.drop-zone-subtext {
+  color: var(--border-gray-dark);
+  font-size: 16px;
+}
+
+.upload-result {
+  margin-top: 32px;
+  padding: 32px;
+  background-color: var(--surface-dark-charcoal);
+  border: 1px solid var(--primary-yellow);
+  border-radius: var(--border-radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.shareable-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-yellow);
+  word-break: break-all;
+  text-align: center;
+  padding: 16px;
+  background-color: var(--interactive-black);
+  border-radius: var(--border-radius-small);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .template-download-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .download-controls {
+    width: 100%;
+  }
+  .download-controls button {
+    flex-grow: 1;
+  }
+  .drop-zone {
+    min-height: 300px;
+  }
+}

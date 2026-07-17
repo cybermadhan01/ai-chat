@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  background-color: var(--surface-black);
 }
 
 .chat-messages-container {
@@ -36,28 +37,29 @@
 }
 
 .message-user .message-content-box {
-  background-color: var(--color-primary);
-  color: #FFFFFF;
+  background-color: var(--surface-dark-charcoal); /* #18181A */
+  color: var(--text-white); /* #FFFFFF */
   padding: 16px 24px;
-  border-radius: var(--border-radius-card);
+  border-radius: var(--border-radius-card); /* 12px */
   border-bottom-right-radius: 4px;
+  border: 1px solid var(--interactive-light-border); /* #374151 */
 }
 
 .message-user .message-text p {
-  color: #FFFFFF;
+  color: var(--text-white);
 }
 
 .message-ai .message-content-box {
   background-color: transparent;
-  color: var(--color-primary);
+  color: var(--text-white);
 }
 
 .ai-avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--primary-yellow); /* #FFD02B */
+  color: var(--interactive-black); /* #000000 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,13 +94,13 @@
 .message-actions button {
   background: none;
   border: none;
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .message-actions button:hover {
-  color: var(--color-primary);
+  color: var(--primary-yellow);
 }
 
 /* Input Area */
@@ -108,32 +110,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--color-bg-page) 20%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--surface-black) 20%);
 }
 
 .chat-input-box {
   width: 100%;
   max-width: 800px;
-  background-color: var(--color-bg-page);
-  border: 1px solid #E2E8F0;
-  border-radius: var(--border-radius-full);
+  background-color: var(--surface-black); /* #000000 */
+  border: 1px solid var(--border-dark-gray); /* #4B5563 */
+  border-radius: var(--border-radius-full); /* pill shape */
   display: flex;
   align-items: flex-end;
   padding: 12px 16px;
   gap: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-raise);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .chat-input-box:focus-within {
-  border-color: var(--color-primary);
+  border-color: var(--primary-yellow); /* #FFD02B */
   box-shadow: var(--shadow-focus);
 }
 
 .icon-btn {
   background: none;
   border: none;
-  color: var(--color-text-body);
+  color: var(--border-gray-dark); /* #9CA3AF */
   cursor: pointer;
   width: 32px;
   height: 32px;
@@ -147,15 +149,15 @@
 }
 
 .icon-btn:hover {
-  color: var(--color-primary);
-  background-color: rgba(15, 23, 42, 0.05);
+  color: var(--primary-yellow);
+  background-color: var(--interactive-dark-gray); /* #232323 */
 }
 
 .chat-input-box textarea {
   flex-grow: 1;
   background: none;
   border: none;
-  color: var(--color-primary);
+  color: var(--text-white);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -166,12 +168,12 @@
 }
 
 .chat-input-box textarea::placeholder {
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
 }
 
 .send-btn {
-  background-color: var(--color-primary);
-  color: #FFFFFF;
+  background-color: var(--primary-yellow); /* #FFD02B */
+  color: var(--interactive-black); /* #000000 */
   border: none;
   width: 36px;
   height: 36px;
@@ -185,18 +187,18 @@
 }
 
 .send-btn:hover:not(:disabled) {
-  background-color: var(--color-secondary);
+  background-color: var(--primary-yellow-lighter); /* #FACC15 */
 }
 
 .send-btn:disabled {
-  background-color: #E2E8F0;
-  color: var(--color-text-light);
+  background-color: var(--interactive-medium-gray); /* #444444 */
+  color: var(--border-gray-dark);
   cursor: not-allowed;
 }
 
 .disclaimer {
   font-size: 12px;
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
   margin-top: 12px;
   text-align: center;
 }
@@ -215,7 +217,7 @@
 
 /* Drag and Drop & Attachments */
 .chat-input-container.drag-active {
-  background: rgba(15, 23, 42, 0.05);
+  background: rgba(255, 208, 43, 0.05);
 }
 
 .drag-overlay {
@@ -224,14 +226,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
   font-weight: 600;
-  color: var(--color-primary);
-  border: 2px dashed var(--color-accent);
+  color: var(--text-white);
+  border: 2px dashed var(--primary-yellow);
   border-radius: var(--border-radius-card);
 }
 
@@ -248,12 +250,12 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #F1F5F9;
+  background-color: var(--surface-dark-charcoal); /* #18181A */
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 13px;
-  color: var(--color-primary);
-  border: 1px solid #E2E8F0;
+  color: var(--text-white);
+  border: 1px solid var(--interactive-light-border); /* #374151 */
 }
 
 .attachment-name {
@@ -266,7 +268,7 @@
 .remove-attachment {
   background: none;
   border: none;
-  color: var(--color-text-light);
+  color: var(--border-gray-dark);
   cursor: pointer;
   display: flex;
   align-items: center;
