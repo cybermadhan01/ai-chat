@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import './McqTest.css';
@@ -50,6 +50,9 @@ export const McqTest: React.FC = () => {
     questionOrder: [],
     optionsMap: {}
   });
+
+  // Scroll ref
+  const topRef = useRef<HTMLDivElement>(null);
 
   // Current question interaction
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -195,7 +198,9 @@ export const McqTest: React.FC = () => {
     if (nextStep >= progress.questionOrder.length) return;
 
     setCurrentStep(nextStep);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     // Check if this question was already answered
     const qIndex = progress.questionOrder[nextStep];
@@ -213,7 +218,9 @@ export const McqTest: React.FC = () => {
     if (currentStep <= 0) return;
     const prevStep = currentStep - 1;
     setCurrentStep(prevStep);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     const qIndex = progress.questionOrder[prevStep];
     const existingAnswer = progress.answers.find(a => a.questionIndex === qIndex);
@@ -320,6 +327,7 @@ export const McqTest: React.FC = () => {
 
       <div className="mcq-test-page">
         <div className="question-container">
+          <div ref={topRef}></div>
           {/* Header */}
           <div className="question-header">
             <span className="question-number">Question {currentStep + 1} of {questions.length}</span>
