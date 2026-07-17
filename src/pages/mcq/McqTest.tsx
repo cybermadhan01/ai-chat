@@ -51,8 +51,9 @@ export const McqTest: React.FC = () => {
     optionsMap: {}
   });
 
-  // Scroll ref
+  // Scroll refs
   const topRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   // Current question interaction
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -360,7 +361,13 @@ export const McqTest: React.FC = () => {
                   key={i}
                   className={optionClass}
                   onClick={() => {
-                    if (!isSubmitted && !isAlreadyAnswered) setSelectedOption(opt);
+                    if (!isSubmitted && !isAlreadyAnswered) {
+                      setSelectedOption(opt);
+                      // Smooth scroll down to the submit button
+                      setTimeout(() => {
+                        bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      }, 100);
+                    }
                   }}
                   disabled={isSubmitted || isAlreadyAnswered}
                 >
@@ -402,6 +409,7 @@ export const McqTest: React.FC = () => {
               )}
             </div>
           </div>
+          <div ref={bottomRef}></div>
         </div>
       </div>
     </>
