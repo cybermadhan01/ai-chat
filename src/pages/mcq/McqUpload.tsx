@@ -92,23 +92,17 @@ export const McqUpload: React.FC = () => {
         throw new Error('Invalid JSON format. Expected an array of objects with "question", "options", and "answer".');
       }
 
-      const response = await fetch('/api/mcq', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(json)
-      });
+      // Generate a unique slug for this test
+      const slug = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 15);
+      
+      // Save the actual test questions data to localStorage
+      localStorage.setItem(`mcq_test_data_${slug}`, JSON.stringify(json));
 
-      const data = await response.json();
-
-      if (data.success && data.slug) {
-        const url = `${window.location.origin}/mcq/${data.slug}`;
-        setShareableUrl(url);
-        setCurrentSlug(data.slug);
-        setTestTitle('');
-        setTitleSaved(false);
-      } else {
-        throw new Error(data.error || 'Failed to upload MCQ data');
-      }
+      const url = `${window.location.origin}/mcq/${slug}`;
+      setShareableUrl(url);
+      setCurrentSlug(slug);
+      setTestTitle('');
+      setTitleSaved(false);
     } catch (err: any) {
       setError(err.message || 'Error processing file. Ensure it contains valid JSON.');
     } finally {
