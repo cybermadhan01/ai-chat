@@ -195,6 +195,7 @@ export const McqTest: React.FC = () => {
     if (nextStep >= progress.questionOrder.length) return;
 
     setCurrentStep(nextStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Check if this question was already answered
     const qIndex = progress.questionOrder[nextStep];
@@ -212,6 +213,7 @@ export const McqTest: React.FC = () => {
     if (currentStep <= 0) return;
     const prevStep = currentStep - 1;
     setCurrentStep(prevStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const qIndex = progress.questionOrder[prevStep];
     const existingAnswer = progress.answers.find(a => a.questionIndex === qIndex);
