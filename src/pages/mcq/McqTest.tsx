@@ -63,12 +63,23 @@ export const McqTest: React.FC = () => {
   useEffect(() => {
     const fetchTest = async () => {
       try {
-        // Load test data directly from localStorage
+        // First try to load test data from localStorage
         const rawData = localStorage.getItem(`mcq_test_data_${slug}`);
-        if (!rawData) {
-          throw new Error('Test not found on this device. (This is a local, browser-only test. You must upload the test file on this device first).');
+        let data;
+        
+        if (rawData) {
+          data = JSON.parse(rawData);
+        } else {
+          // If not in localStorage, fetch from database and cache it
+          const response = await fetch(`/api/mcq/${slug}`);
+          if (!response.ok) {
+            throw new Error('Test not found or error loading test.');
+          }
+          data = await response.json();
+          // Cache the test questions data locally
+          localStorage.setItem(`mcq_test_data_${slug}`, JSON.stringify(data));
         }
-        const data = JSON.parse(rawData);
+        
         setQuestions(data);
 
         // Load saved progress
