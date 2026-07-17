@@ -245,9 +245,12 @@ export const McqUpload: React.FC = () => {
               </Button>
             </div>
 
-            {/* URL with Copy */}
+            {/* URL with Copy & Open */}
             <div className="url-display-row">
               <span>{shareableUrl}</span>
+              <button className="copy-btn" onClick={() => window.open(shareableUrl, '_blank')}>
+                Open
+              </button>
               <button className="copy-btn" onClick={() => handleCopyUrl(shareableUrl)}>
                 {copyText}
               </button>
@@ -283,6 +286,12 @@ export const McqUpload: React.FC = () => {
                     </a>
                   </div>
                   <div className="history-item-actions">
+                    <button
+                      className="history-copy-btn"
+                      onClick={() => window.open(test.url, '_blank')}
+                    >
+                      Open
+                    </button>
                     <button
                       className="history-copy-btn"
                       id={`copy-${test.slug}`}
